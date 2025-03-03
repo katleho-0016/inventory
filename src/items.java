@@ -4,11 +4,11 @@ public abstract class items {
     private String name; //name of the object
     final int id; //unique identifier
     private int quantity;
-    public items(String name, int quatity){
+    public items(String name, int quantity){
         this.name = name;
         Random ran = new Random();
         this.id = ran.nextInt(10000);
-        this.quantity = quatity ;
+        this.quantity = quantity ;
     }
 
     public int getId() {
@@ -31,6 +31,7 @@ public abstract class items {
         this.quantity = quantity;
     }
 
+    @Override
     public String toString(){
         return "Name: "+this.getName()+
                 "\nProduct id: "+this.getId()+
