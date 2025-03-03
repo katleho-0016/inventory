@@ -19,8 +19,5 @@ public class Main {
                 answer = "q";
             }
         } while (!answer.equals("q"));
-
-
-
     }
 }
