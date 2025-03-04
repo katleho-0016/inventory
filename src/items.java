@@ -31,6 +31,12 @@ public abstract class items {
         this.quantity = quantity;
     }
 
+
+    public boolean equals(String name) {
+        return (this.name).equals(name);
+    }
+
+
     @Override
     public String toString(){
         return "Name: "+this.getName()+

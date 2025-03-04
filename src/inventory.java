@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Optional;
+
 public class inventory {
     ArrayList<items> stored_list =new  ArrayList<items> ();
     // takes in item and quantity
@@ -8,6 +10,21 @@ public class inventory {
 
     public void addInventory(items item){
         this.stored_list.add(item);
+    }
+
+    public Optional<items> getItem(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("Name cannot be null");
+        }
+
+        for (items item : stored_list) {
+            if (name.equals(item.getName())) {
+                return Optional.of(item);
+            }
+        }
+
+        System.out.println("Item does not exist with name: "+name);
+        return Optional.empty();
     }
 
     public void sellItem(items item){
